@@ -62,7 +62,7 @@ form {
 /* LOADING */
 
 #loader {
-    height: 101%;
+    height: 100%;
     position: relative;
     z-index: 1001;
     /* anything higher than a z-index of 1000 */
@@ -81,7 +81,7 @@ form {
     top: 0;
     width: 50%;
     height: 100%;
-    background: #ffee02;
+    background: #fceb07;
     z-index: 1000;
 }
 
@@ -103,7 +103,7 @@ form {
 h1 {
     clear: left;
     width: 100%;
-    color: rgb(248, 211, 2);
+    color: rgb(253, 216, 4);
     text-align: center;
     font-size: 52px;
     color: rgb(120, 230, 250);
