@@ -324,7 +324,7 @@ a:hover {
 
 #daily_controls .glyphicon {
     font-size: 60px;
-    margin-left: 21px;
+    margin-left: 20px;
     color: rgb(40, 2, 253);
 }
 
@@ -338,7 +338,7 @@ a:hover {
 }
 
 h2 {
-    padding-bottom: 30px;
+    padding-bottom: 31px;
     font-size: 40px;
     border-bottom: 2px dashed #636363;
 }
