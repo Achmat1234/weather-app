@@ -1,0 +1,127 @@
+<DOCTYPE html>
+<html lang="en"
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-with, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="stylesheet" href="css/style.css">
+<title>WeatherApp</title>
+</head>
+<body>
+
+   <h1 class="heading">Weather update1</h1>
+           <!--  Added a input field -->
+<section id="hero">
+                <div class="section-inner">
+        <div class="container">
+            <h3>Enter the tempreature: <input type="number" id="temp">
+            <input type="submit" value="submit" onclick="displayUserOutput()">
+            <p id="text"></p>
+       </div>
+
+       <div class="container">
+		<div id="content">
+			<form action="" id="address_form" class="form-inline">
+			
+			<div class="input-wrapper">
+					<input type="text" id="address_query" placeholder="Enter a Location">
+					<button type="submit" id="searchBTN"><span class="glyphicon glyphicon-search"></span></button>
+			</div>
+
+			</form>
+			
+			<h1>Weather App</h1>
+
+			<button id="convertBTN" data-conversion="celsius">Celsius &deg;</button>
+
+			<div class="row" id="daily_forecast">
+				<div class="col-lg-4 quick_info_wrapper day" id="today">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="col-lg-4 quick_info_wrapper day unselected">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="col-lg-4 quick_info_wrapper day unselected">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="col-lg-4 quick_info_wrapper day unselected">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="col-lg-4 quick_info_wrapper day unselected">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="col-lg-4 quick_info_wrapper day unselected">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+
+				<div style="" class="col-lg-4 quick_info_wrapper day unselected">
+					<a class="summary-link" href="#summary_heading">
+						<p class="time"></p>
+						<div id="quick_info">
+							<img src="https://lh3.googleusercontent.com/nRiCouECHPBPc_9cBut6KDuFSxl516nm6Y6jovE7aZ1uZQFTbYxnK7PDS1_jxVkszKn4358r2zWigGhjPOYFY3HcobgfWnwG6IXzoIYeNEG7Dy1yqjByZXIgcDROAQIqGPA5hY1pNrQ6Ms7FPGabU1LpdFsqE-ruECPPYPjTu1CNV-SsgWpBlXD2x40Kc4NwegGrdsgEL_yxShYh3UiJMy-KX0IHLaiGiIk0-fjZTfOhFpu8l0pccDCh3PmsihJXTue2YgthKwqBi09nuBULD3Zp0bqM8HuqlRWNHrGBjmQV9J_MWI9RDl9sAenjkw4JtoHnLggdXyYTkeayjyK7TMZPIRjOdxzVZdh_hK6GC3Skz5Rc8XVTXf07Yrtcrt9rwIT0xZKHKxQwPKuYR5Dx2hP6hW-Xe0HNDj6jrcXxJjAI49fZs16R8z7PrATThI4GQYzx5sjWZ3MXoLeoOqKjhFmkaRc8W-keJ2wkOx0zQkWebddY5U_VV1T2ml2MTEPHTqbPB-dUOtvUHO0e7SKQyMr9PbFiS9_gn_MpT4TXPQ=s128-no" id="currently_icon">
+							<p class="temperature">0&#8457;</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<main>
+				<h2 id="summary_heading">Summary. <small class="summary-date" style="margin-left: 20px; color: #B4B4B4">06 july 2019</small></h2>
+				<p id="summary">Todays weather is broadcasted by ACHMAT ARMIEN.</p>
+				
+			</main>
+		</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqY9xDS0UiWtD3piilSmkQ5RBcIk_O7BU&callback=initialize">
+    </script>
+
+
+    <script  src="js/script.js"></script>
+    <script src="js/main.js"></script>
+       
+    </body>
+</html>
